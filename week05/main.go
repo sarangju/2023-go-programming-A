@@ -18,21 +18,24 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	for i :=0; i< 10; i++{
+	for i := 0; i < 10; i++ {
 		fmt.Println("You have ", 10-i, "chances")
 		fmt.Print("Input guess number: ")
 		inputNumber, err := reader.ReadString(`\n`)
-		if err != nill {
+		if err != nil {
 			log.Fatal(err)
 		}
 		inputNumberString = strings.TrimSpace(inputNumberString)
 		inputNumber, err := strconv.Atoil(inputNumberString)
-		if err != nill {
+		if err != nil {
 			log.Fatal(err)
 		}
-		if inputNumber < answer {
+		if inputNumber == answer {
+			fmt.Println("Great.")
+		} else if inputNumber < answer {
 			fmt.Println("Guess number is lower than answer") // answer is higher than inputnum
 		} else if inputNumber > answer {
 			fmt.Println("Guess number is higher than answer")
 		}
 	}
+}
