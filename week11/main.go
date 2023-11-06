@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	/* var primes [3]int
@@ -20,9 +22,27 @@ func main() {
 
 	// fmt.Println(primes[4]) // invalid argument: index 4 out of bounds [0:3]
 
+	/* j := 0
+	for j < 4 { // panic error!!!!!!
+		fmt.Println(primes[j])
+		j++
+	} */
+
 	i := 0
-	for i < 4 { // panic: runtime error: index out of range [3] with length 3
+	for i < len(primes) { // while문 처럼
 		fmt.Println(primes[i])
 		i++
+	}
+
+	// for j := 0; j < len(primes); j++   => for문으로
+
+	for idx, primes := range primes { // 0 2 , 1 3, 2 5
+		fmt.Println(idx, primes)
+	}
+
+	// for primes := range primes { // range는 변수를 하나만 쓰면 index만 받음 => 0,1,2
+	// for idx, prime := range primes { // 컴파일에러, idx 사용해야함}
+	for _, primes := range primes {
+		fmt.Println(primes)
 	}
 }
