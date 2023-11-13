@@ -32,4 +32,15 @@ func main() {
 	fmt.Println(testS2)
 	fmt.Println(testS, len(testS))
 	fmt.Println(test)
+
+	// 으아아아악
+	a := []string{"a", "b", "c", "d"}
+	aS := a[:2]
+	aS[1] = "z"
+	fmt.Println(a)
+	fmt.Println(aS)
+
+	b := [4]int{4, 3, 2, 1}
+	bS := b[1:3]
+	fmt.Println(bS)
 }
