@@ -43,4 +43,12 @@ func main() {
 	b := [4]int{4, 3, 2, 1}
 	bS := b[1:3]
 	fmt.Println(bS)
+
+	c := make([]string, 4, 5) // string은 타입, 4는 length(개수), 5는 capacity(수용량)
+	c[0] = "a"
+	c[2] = "c"
+	c[3] = "d"
+	cS := c[0:2]
+	cS[1] = "z"
+	fmt.Println(c, len(c), cap(c))
 }
