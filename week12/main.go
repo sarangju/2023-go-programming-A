@@ -50,5 +50,9 @@ func main() {
 	c[3] = "d"
 	cS := c[0:2]
 	cS[1] = "z"
+	// CC := append(c, "y")
+	CC := append(c, "y", "x") // capacity가 바뀐다 5->10
+
 	fmt.Println(c, len(c), cap(c))
+	fmt.Println(CC, len(CC), cap(CC))
 }
