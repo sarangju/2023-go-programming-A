@@ -17,4 +17,9 @@ func main() {
 	for _, value := range s {
 		fmt.Println(value)
 	}
+
+	copyS := s[1:4]
+	for _, value := range copyS {
+		fmt.Println(value)
+	}
 }
