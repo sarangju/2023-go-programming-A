@@ -52,7 +52,13 @@ func main() {
 	cS[1] = "z"
 	// CC := append(c, "y")
 	CC := append(c, "y", "x") // capacity가 바뀐다 5->10
-
+	// capacity를 넘어서면 새로운 공간을 할당
 	fmt.Println(c, len(c), cap(c))
 	fmt.Println(CC, len(CC), cap(CC))
+	fmt.Printf("%x %x %x\n", &c[0], &cS[0], &CC[0])
+	// c00006a050 c00006a050 c00006c0a0  -> CC만 주소가 다름
+
+	CC[0] = "K"
+	fmt.Println(c, CC)
+
 }
