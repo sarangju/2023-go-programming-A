@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var games map[int]string
 	games = make(map[int]string)
-
+	// append
 	games[456] = "우우우"
 	games[722] = "최최최"
 	games[303] = "정정정"
@@ -17,4 +17,10 @@ func main() {
 		fmt.Println(v)
 	}
 
+	games[456] = "곡곡곡" // update
+	delete(games, 912) // delete
+
+	for k, v := range games {
+		fmt.Println(k, v)
+	}
 }
